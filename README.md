@@ -1,1 +1,1 @@
-# FullStackProject-Riplica-of-Airbnb
+# FullStackProject-Replica-of-Airbnb
