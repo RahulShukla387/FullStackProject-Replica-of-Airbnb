@@ -1,0 +1,101 @@
+ #background{
+    background-image: url("https://res.cloudinary.com/di3sion8u/image/upload/v1745416240/BookRooms/domm6b09qmdyqnji7ikt.jpg" );
+    background-size: contain;
+    position: relative; 
+ }
+.navbar{
+    height: 4rem;
+}
+.fa-hotel{
+font-size: 2rem;
+}
+.nav-link{
+    color: black;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(212, 229, 247);
+    flex-wrap: wrap;
+    align-items: center;
+    height: 4rem;
+}
+.item{
+    background-color: rgb(212, 229, 247);
+    align-items: space-evenly;
+
+}
+.link{
+text-decoration: none;
+color: black;
+}
+
+.newlist{
+    height: 2rem;
+    width: 70%;
+    border-radius: 5px;
+    background-color: rgb(207, 207, 215);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+   flex: 1; 
+}
+.button{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 30%;
+    background-color: rgb(186, 114, 114);
+}
+.comment{
+    background-color: rgb(201, 200, 200);
+    border-radius: 1rem;
+    width: 50%;
+}
+.reviews{
+    border: 1px solid rgb(178, 182, 213);
+    border-radius:1rem ;
+    background-color: rgb(218, 218, 124);
+}
+ .center{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    background-color: rgb(165, 165, 115);
+    border: 2px solid yellow;
+    
+}
+.shiftCenter{
+     /* display: flex;  It will display all the content in same horizontal line  use display direction column along with it ;  */
+     display: flex;
+    flex-direction: column;
+     align-items: center;
+     justify-content: center;
+} 
+
+.photoCenter{
+    display: flex;
+     align-items: center;
+     justify-content: center;
+}  
+.sameHeight{
+    width: 27rem;
+    height: 35rem;
+}
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .filter{
+    /* text algn is very important style used to take the test in center. */
+   text-align: center;  
+   margin-left: 6rem;
+        }
+
+    .GST{
+    /* Display: inline; means that you want to show the object by default it is in inline  */
+    display: none;  
+   }    
+   .footer

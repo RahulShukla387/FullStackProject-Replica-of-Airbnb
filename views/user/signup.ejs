@@ -1,0 +1,19 @@
+  <%- layout("/layouts/boilerplate.ejs")  %>
+<body id="background">
+  <h1>Signup as new user</h1>
+<form action="/signup" method="post">
+    <div class="mb-3">
+  <label for="username">Enter you username</label>  <br>
+  <input type="text" name="user[username]" id="username" placeholder="username" class="form-control" required>
+    </div> 
+    <div class="mb-3">
+  <label for="email">Enter you email</label>  <br>
+  <input type="text" name="user[email]" id="email" placeholder="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+  <label for="password">Enter you Password</label>  <br>
+  <input type="password" name="user[password]" id="password" placeholder="password" class="form-control" required>
+    </div>
+      <input type="submit" name="" id="" placeholder="submit" class="button">
+</form>
+</body>

@@ -1,0 +1,14 @@
+ <% if(success && success.length){ %>
+    <!-- class alert alert-success is used for making a alert segment in the document like alert for flash -->
+    <div class="alert alert-success alert-dismissible fade show " role="alert"> 
+     <%= success %>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"> </button>
+    </div>
+<% } %> 
+ <% if(error && error.length){ %>
+    <!-- class alert alert-success is used for making a alert segment in the document like alert for flash -->
+    <div class="alert alert-danger alert-dismissible fade show " role="alert"> 
+     <%= error %>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"> </button>
+    </div>
+<% } %> 

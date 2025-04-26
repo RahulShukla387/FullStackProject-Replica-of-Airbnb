@@ -1,0 +1,18 @@
+  <!-- importing the layouts from the boilerplate.ejs using ejs-mate -->
+<%- layout("/layouts/boilerplate.ejs")  %>
+<body id="background">
+    <h1>You can enjoy at:</h1>
+       <!-- <b> <i> <a href="http://localhost:8080/showAll">Show all together</a> <br><hr> </i></b>  -->
+       <!-- <b> <i> <a href="http://localhost:8080/newlisting">Add a new list</a> <br> </i></b>  -->
+     <% for(list of listings){ %>
+        <ul>
+            <li>
+        <a href="http://localhost:8080/listing/<%= list.id %>"><%= list.title  %></a>
+            </li>
+     <% if(currUser && currUser._id.toString() === list.owner._id.toString()){ %>
+              <a href="http://localhost:8080/edit/<%= list.id %>" class="button link"> <b><i>Edit Post</i></b> </a>
+              <% } %>
+          </ul>
+            <hr>
+        <% } %>
+</body>

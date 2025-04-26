@@ -1,0 +1,81 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+<body id="background">
+  <div class="container mt-4">
+     <div class="filters">
+      <div class="filter">
+        <i class="fa-solid fa-house-user"></i> <br>
+        <p><b>rooms</b></p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-arrow-trend-up"></i> <br>
+        <p><b>Trending</b></p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-fire"></i> <br>
+        <p><b>Camping</b></p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-gamepad"></i> <br>
+        <p><b>play</b></p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-kitchen-set"></i> <br>
+        <p><b>Kitchen</b></p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-bed"></i> <br>
+        <p><b>Beds</b></p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-plus"></i><br>
+        <p><b>New</b></p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-umbrella-beach"></i> <br>
+        <p><b>Beach</b></p>
+      </div>
+     </div>    
+      <div class="filter">
+        <div class="form-check-reverse form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+          <label class="form-check-label" for="switchCheckDefault">Cost with Added GST </label> <br>
+        </div>
+      </div>
+     </div>     <br>
+ 
+          
+    <div class="row">
+      <% for(let list of listings) { %>
+        <div class="col-md-4 mb-4 sameHeight">
+          <div class="card" style="width: 100%;">
+            <a href="/listing/<%= list.id %>" class="link">
+            <img src="<%= list.image.url %>" class="card-img-top" alt="resort image" height="300px" width="300px" >
+            <div class="card-body">
+              <h5 class="card-title"><b><i>Title:</i></b> <%= list.title %></h5>
+              <p class="card-text"><b><i>Description:</i></b> <%= list.description %></p>
+              <p class="card-text"><b><i>Location:</i></b> <%= list.location %></p>
+              <p class="card-text"><b><i>Country:</i></b> <%= list.country %></p>
+              <p class="card-text"><b><i>Price: </i></b><i>&#8377;</i> <%= list.price.toLocaleString("en-IN") %>/ night &nbsp; <span class="GST"> +15% GST</span> </p>
+            </div>
+          </div>
+        </a>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  <script>
+    let switchbtn=  document.querySelector("#switchCheckDefault");
+    switchbtn.addEventListener("click", ()=>{
+      let tax =  document.querySelectorAll(".GST");
+        // console.log(tax);
+        for(list of tax){
+          if(list.style.display != "inline"){
+            list.style.display = "inline"
+          }
+          else{
+            list.style.display = "none"
+          }
+        }
+    })
+   </script>
+</body>

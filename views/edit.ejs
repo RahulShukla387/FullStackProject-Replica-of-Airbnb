@@ -1,0 +1,29 @@
+ <%- layout("/layouts/boilerplate")  %>
+<body id="background">
+    <h1>Edit your form <%= list.id  %></h1>
+     <% if(currUser && currUser._id.toString() === list.owner._id.toString()){ %>
+    <form action="http://localhost:8080/edit/<%= list.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+        <h3>Title:</h3>
+    <textarea name="list[title]" id="title" class="newlist" required><%= list.title  %></textarea> <br> <br> <hr>
+    <h3>description</h3>
+    <textarea name="list[description]" id="description" required> <%= list.description  %></textarea> <br> <br> <hr>
+    <h3>Location</h3>
+    <textarea name="list[location]" id="location" required> <%= list.location %></textarea> <br> <br> <hr>
+    <div >
+        original Listing Image <br>
+        <img src="<%= list.image.url %>" alt="your hotel" height="100px">
+    </div>
+    <h3>UpdateImage</h3>
+         <input type="file" name="imgurl" id="imgurl" class="newlist" >  >
+    <h3>Price</h3>
+    <textarea name="list[price]" id="price" class="newlist" required> <%= list.price  %></textarea> <br> <br>
+    <input type="submit" name="submit" id="submit" value="update" class="button">
+    </form>
+    <form method="post" action="http://localhost:8080/delete/<%= list.id %>?_method=DELETE">
+        <input type="submit" name="dlt" id="dlt" value="Delete" class="button">
+     </form> <br>
+     <% } else { %>
+        <p><b><i> You are not the authorized user to update the list </i></b></p>
+        <% } %>
+</body>
+</html>

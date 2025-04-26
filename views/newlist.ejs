@@ -1,0 +1,18 @@
+<%- layout("/layouts/boilerplate.ejs")  %>
+<body id="background">
+    <div id="newlist">
+    <h1>Add a new list.</h1>
+    <!-- novalidate is used if you want to use css class. 1> novalidate -->
+    <form action="http://localhost:8080/newlisting" method="post" enctype="multipart/form-data"> 
+    <input type="text" name="listing[title]" placeholder="Enter title" class="newlist" required> <br> <br>
+    <textarea name="listing[description]"  placeholder="Add description" class="newlist" required></textarea> <br><br>
+    <input type="number" name="listing[price]" placeholder="Price in ruppees per day (fill 0 in case of free)" class="newlist" required> <br><br>
+    <input type="text" name="listing[country]"  placeholder="Enter country name" class="newlist" required> <br><br>
+    <input type="text" name="listing[location]"  placeholder="Enter location" class="newlist" required > <br><br>
+    <label for="image"> Upload image</label> <br>
+    <input type="file" name="listing[img]"  placeholder="Upload image " class="newlist form-data" id="image"> <br> <br>
+    <input type="submit" class="button"> 
+</form>
+</div>
+<!-- <script type="module" src="/js/script.js"></script> -->
+</body>
