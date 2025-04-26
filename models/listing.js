@@ -1,12 +1,6 @@
 // unplash is a website for free images without copyright.
 import mongoose from "mongoose";
 import reviews from "./review.js";
-import 'dotenv/config'
-const dbUrl= process.env.ATLASDB_URL;
-
-
-mongoose.connect(dbUrl)
-  .then(() => console.log('Connected!'));
    let Schema = mongoose.Schema;
   let listingSchema = new Schema({
     title:{
@@ -45,5 +39,3 @@ mongoose.connect(dbUrl)
 });
   let listing = mongoose.model("listing" , listingSchema);
   export default listing;
-let value = await listing.find();
-let count = await listing.countDocuments();
