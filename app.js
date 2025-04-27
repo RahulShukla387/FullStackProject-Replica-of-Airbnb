@@ -140,7 +140,7 @@ catch(err){
 }
  //todo Adding AboutSection
  app.get("/about", async(req, res)=>{
-  let currUser = req.user;
+  let currUser = req.user || null;
   res.render("about.ejs",{currUser});
 })
 app.delete("/delete/:id",isLoggedin, controllerApp.destroy);
