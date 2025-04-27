@@ -69,7 +69,7 @@ app.listen(port, ()=>{
 })
 //todo using flash
 //const mongo store
-const Store = MongoStore.create({
+const store = MongoStore.create({
   mongoUrl: dbUrl,
   crypto:{
     secret: mysecret,  
@@ -77,12 +77,12 @@ const Store = MongoStore.create({
   touchAfter: 24*60*60, // stores time in seconds
 })
 
-Store.on("error", (err)=>{
+store.on("error", (err)=>{
   console.log("Error in Mongo Sessions " + err);
 })
 
 const sessionvalue = {
-  Store: Store,
+  store: store,
   secret: mysecret,
    resave: false ,
     saveUninitialized: true,
