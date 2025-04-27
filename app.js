@@ -140,7 +140,8 @@ catch(err){
 }
  //todo Adding AboutSection
  app.get("/about", async(req, res)=>{
-  res.render("about.ejs");
+  let currUser = req.user;
+  res.render("about.ejs",{currUser});
 })
 app.delete("/delete/:id",isLoggedin, controllerApp.destroy);
 //todo app.all is used to accept all the request from any server

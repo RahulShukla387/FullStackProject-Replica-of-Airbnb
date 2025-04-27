@@ -8,9 +8,10 @@ const localValues = (req, res, next)=>{
   }
   //todo Showall route 
   const showAll=  async (req, res)=>{
+    let currUser = req.user;
     let listings = await listing.find({});
     // console.log(listings);
-    res.render("showAll.ejs",{listings});
+    res.render("showAll.ejs",{listings, currUser});
   }
 //todo newlist 
 
