@@ -1,11 +1,11 @@
 import listing from "../models/listing.js";
 //todo storing localValues for using in the session
-const localValues = (req, res, next)=>{
-    res.locals.success = req.flash("success");
-    res.locals.error = req.flash("error");
-    res.locals.currUser = req.user;
-    next();
-  }
+// const localValues = (req, res, next)=>{
+//     res.locals.success = req.flash("success");
+//     res.locals.error = req.flash("error");
+//     res.locals.currUser = req.user;
+//     next();
+//   }
   //todo Showall route 
   const showAll=  async (req, res)=>{
     let currUser = req.user;
