@@ -6,7 +6,7 @@ const app = express();
 //todo importing wrapAsync function and myError fucntion , SchemaValidationn i.e from joi , review module
 import wrapAsync from "./utils/wrapAsync.js";
 import myError from "./utils/myError.js";
-import router,  { errorValidate } from "./routes/listing.js";
+import  { errorValidate } from "./routes/listing.js";
 import controllerApp from "./controller/controllerApp.js";
 //todo Requiring cloudinary
 import { storage } from "./cloudConfig.js"
@@ -145,8 +145,7 @@ catch(err){
 }
  //todo Adding AboutSection
  app.get("/about", async(req, res)=>{
-  let currUser = req.user || null;
-  res.render("about.ejs",{currUser});
+  res.render("about.ejs");
 })
 app.delete("/delete/:id",isLoggedin, controllerApp.destroy);
 //todo app.all is used to accept all the request from any server
