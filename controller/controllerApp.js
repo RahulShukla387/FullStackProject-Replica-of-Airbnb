@@ -78,4 +78,4 @@ const destroy = async (req, res)=>{
   res.redirect("/listing");
 }
 
-export default { localValues , showAll , getEdit , postEdit, destroy , newlist } ;
+export default { showAll , getEdit , postEdit, destroy , newlist } ;
