@@ -5,6 +5,7 @@
        <!-- <b> <i> <a href="http://localhost:8080/showAll">Show all together</a> <br><hr> </i></b>  -->
        <!-- <b> <i> <a href="http://localhost:8080/newlisting">Add a new list</a> <br> </i></b>  -->
      <% for(list of listings){ %>
+      <% if (list.approved){ %>
         <ul>
             <li>
         <a href="/listing/<%= list.id %>"><%= list.title  %></a>
@@ -14,5 +15,6 @@
               <% } %>
           </ul>
             <hr>
+        <% } %>
         <% } %>
 </body>

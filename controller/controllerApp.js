@@ -29,7 +29,7 @@ const newlist = async(req, res, next)=>{
 });
     console.log(newlisting);
     await newlisting.save();
-    req.flash("success", "You had created a list ");
+    req.flash("success", " Your list will be uploaded after admin approval");
     res.redirect("/listing");
 // res.send("successfully uploaded");
 }

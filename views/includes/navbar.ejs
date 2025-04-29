@@ -9,10 +9,13 @@
           <a class="nav-link " aria-current="page" href="/showAll">Home</a>
           <a class="nav-link" href="/listing">All lists</a>
           <a class="nav-link" href="/newlisting">Create new</a> 
+          <% if(currUser && currUser.username === "admin"){ %>
+          <a class="nav-link" href="/approved">Please Aprrove</a>
+          <% } %>
         </div>
 
           <div class="navbar-nav ms-auto ">
-                <% if(currUser && currUser.length){ %>     
+                <% if(currUser){ %>     
                      <a class="nav-link" href="/logout"> Logout</a>
                      <% } else { %>
               <a class="nav-link" href="/login"> login</a>

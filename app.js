@@ -5,7 +5,7 @@ import express from "express";
 const app = express();
 //todo importing wrapAsync function and myError fucntion , SchemaValidationn i.e from joi , review module
 import wrapAsync from "./utils/wrapAsync.js";
-import myError from "./utils/myError.js";
+// import myError from "./utils/myError.js";
 import  { errorValidate } from "./routes/listing.js";
 import controllerApp from "./controller/controllerApp.js";
 //todo Requiring cloudinary
@@ -13,7 +13,6 @@ import { storage } from "./cloudConfig.js"
 //todo multer to incode the data of form of multipart/form data 
 import multer from "multer";
 const upload = multer({ storage })
-
 
 //todo Ejs- mate
 import ejsMate from "ejs-mate";
@@ -60,6 +59,7 @@ import cookie from "./cookies/cookies.js"; // importing the cookies
 import passport from "passport";
 import LocalStrategy from "passport-local";
  import User from "./models/user.js"; 
+ import listing from "./models/listing.js";
  import isLoggedin from "./middleware.js";
 import MongoStore from 'connect-mongo';
 //todo starting port
@@ -106,7 +106,6 @@ app.use((req, res, next)=>{
   res.locals.currUser = req.user;
   next();
 });
-
 app.get("/showAll", controllerApp.showAll);
 
 //todo Using the router
@@ -148,6 +147,21 @@ catch(err){
   res.render("about.ejs");
 })
 app.delete("/delete/:id",isLoggedin, controllerApp.destroy);
+//todo Approval
+app.get("/approved",async (req, res,next)=>{
+  //  let list = await listing.find({approved: false});
+  let list = await listing.find({ approved: false });
+if (!Array.isArray(list)) {
+   list = []; // Ensure it's always an array
+}
+  res.render("approved.ejs",{list})
+})
+app.post("/approved/:id", async(req, res, next)=>{
+  const {id} = req.params;
+  let list = await listing.findByIdAndUpdate(id, {approved: true}, {new: true});
+  console.log( list);
+  res.render("approved.ejs",{list});
+})
 //todo app.all is used to accept all the request from any server
 app.all("*", (req, res, next )=>{
  res.render("about.ejs");

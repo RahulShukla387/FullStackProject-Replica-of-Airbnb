@@ -1,0 +1,7 @@
+<h1>Please approved the right list from here: </h1>
+<% for(let post = 0; post <list.length; post++ ){ %>
+    <form action="/approved/<%= list[post]._id %>" method="post">
+        <a href="/listing/<%= list[post]._id %>" > <%= list[post].title  %> </a> &nbsp; &nbsp;
+        <input type="submit" name="" id="" value="approve">
+    </form>
+    <% } %>

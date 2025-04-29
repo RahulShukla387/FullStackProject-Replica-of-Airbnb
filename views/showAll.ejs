@@ -46,6 +46,7 @@
           
     <div class="row">
       <% for(let list of listings) { %>
+      <% if (list.approved){ %>
         <div class="col-md-4 mb-4 sameHeight">
           <div class="card" style="width: 100%;">
             <a href="/listing/<%= list.id %>" class="link">
@@ -60,6 +61,7 @@
           </div>
         </a>
         </div>
+        <% } %>
       <% } %>
     </div>
   </div>

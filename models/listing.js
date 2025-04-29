@@ -31,6 +31,10 @@ import reviews from "./review.js";
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    approved: {
+      type: Boolean,
+      default: false,
+    }
   })
   listingSchema.post("findOneAndDelete" , async(listing)=>{
     if(listing){
