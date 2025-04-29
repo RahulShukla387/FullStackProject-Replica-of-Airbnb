@@ -84,7 +84,7 @@
         </div>
          <div>
             <h1>Please rate and comment </h1>
-            <form action="http://localhost:8080/listing/<%= list.id %>/reviews" class="offset-3 col-8" method="post">
+            <form action="/listing/<%= list.id %>/reviews" class="offset-3 col-8" method="post">
               <label for="rating">Please rate it </label>   
               <!-- <input type="range" min="1" max="5" name="review[rating]" id="rating" class="form-range" style="background-color:rgb(150, 150, 200);" required> <br><br> -->
               <!--todo for rating in the stars -->
@@ -116,7 +116,7 @@
                   <li class="reviews"> <b><i>Comment: </i></b><%= data.comment  %></li>
                   <p class="reviews"> <b><i>By:  </i></b>  <%= data.author.username %></p>
                   <% if(currUser && currUser._id.toString() === data.author._id.toString()){ %>
-                  <form action="http://localhost:8080/listing/<%= list.id %>/review/<%=data._id %>?_method=DELETE" method="post">
+                  <form action="/listing/<%= list.id %>/review/<%=data._id %>?_method=DELETE" method="post">
                      <button class="button">DeleteReview</button>
                   </form>
                   <% } %>

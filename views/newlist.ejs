@@ -3,7 +3,7 @@
     <div id="newlist">
     <h1>Add a new list.</h1>
     <!-- novalidate is used if you want to use css class. 1> novalidate -->
-    <form action="http://localhost:8080/newlisting" method="post" enctype="multipart/form-data"> 
+    <form action="/newlisting" method="post" enctype="multipart/form-data"> 
     <input type="text" name="listing[title]" placeholder="Enter title" class="newlist" required> <br> <br>
     <textarea name="listing[description]"  placeholder="Add description" class="newlist" required></textarea> <br><br>
     <input type="number" name="listing[price]" placeholder="Price in ruppees per day (fill 0 in case of free)" class="newlist" required> <br><br>
