@@ -150,7 +150,7 @@ catch(err){
 app.delete("/delete/:id",isLoggedin, controllerApp.destroy);
 //todo app.all is used to accept all the request from any server
 app.all("*", (req, res, next )=>{
- res.render("/about");
+ res.render("about.ejs");
   // next(new myError(400, 'please recheck root '));
 })
 app.use((err, req, res , next)=>{
