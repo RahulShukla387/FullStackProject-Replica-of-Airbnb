@@ -7,10 +7,10 @@
      <% for(list of listings){ %>
         <ul>
             <li>
-        <a href="http://localhost:8080/listing/<%= list.id %>"><%= list.title  %></a>
+        <a href="/listing/<%= list.id %>"><%= list.title  %></a>
             </li>
      <% if(currUser && currUser._id.toString() === list.owner._id.toString()){ %>
-              <a href="http://localhost:8080/edit/<%= list.id %>" class="button link"> <b><i>Edit Post</i></b> </a>
+              <a href="/edit/<%= list.id %>" class="button link"> <b><i>Edit Post</i></b> </a>
               <% } %>
           </ul>
             <hr>

@@ -3,7 +3,7 @@
 <body>
   <div id="background">
   <% if( currUser && currUser._id.toString() === list.owner._id.toString()){ %>
-    <form method="post" action="http://localhost:8080/delete/<%=list.id %>?_method=DELETE">
+    <form method="post" action="/delete/<%=list.id %>?_method=DELETE">
         <input type="submit" name="dlt" id="dlt" value="DeletePost" class="button">
      </form> <br>
      <a href="/edit/<%= list.id %>" class="button link"> Edit Post</a>
