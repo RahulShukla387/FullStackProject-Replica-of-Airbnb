@@ -2,7 +2,7 @@
 
 <body>
   <div id="background">
-  <% if( currUser && currUser._id.toString() === list.owner._id.toString() || currUser.username ==="admin"){ %>
+  <% if( currUser && (currUser._id.toString() === list.owner._id.toString() || currUser.username ==="admin")){ %>
     <form method="post" action="/delete/<%=list.id %>?_method=DELETE">
         <input type="submit" name="dlt" id="dlt" value="DeletePost" class="button">
      </form> <br>
