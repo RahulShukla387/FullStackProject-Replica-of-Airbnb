@@ -1,7 +1,8 @@
  #background{
-    background-image: url("https://res.cloudinary.com/di3sion8u/image/upload/v1745416240/BookRooms/domm6b09qmdyqnji7ikt.jpg" );
+    /* background-image: url("https://res.cloudinary.com/di3sion8u/image/upload/v1745416240/BookRooms/domm6b09qmdyqnji7ikt.jpg" ); */
     background-size: contain;
     position: relative; 
+    background-color: rgb(10,25,47, 0.4);
  }
 .navbar{
     height: 4rem;
