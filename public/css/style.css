@@ -98,4 +98,7 @@ body{
     /* Display: inline; means that you want to show the object by default it is in inline  */
     display: none;  
    }    
-   .footer
+   .navBackGround{
+    background-color: rgba(121, 65, 176, 0.1);
+    /* opacity: 0.5; */
+   }
