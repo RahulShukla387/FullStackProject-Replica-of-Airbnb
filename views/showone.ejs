@@ -115,7 +115,7 @@
                    </p>
                   <li class="reviews"> <b><i>Comment: </i></b><%= data.comment  %></li>
                   <p class="reviews"> <b><i>By:  </i></b>  <%= data.author.username %></p>
-                  <% if(currUser && currUser._id.toString() === data.author._id.toString() || currUser.username === "admin"){ %>
+                  <% if(currUser && (currUser._id.toString() === data.author._id.toString() || currUser.username === "admin")){ %>
                   <form action="/listing/<%= list.id %>/review/<%=data._id %>?_method=DELETE" method="post">
                      <button class="button">DeleteReview</button>
                   </form>
